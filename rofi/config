@@ -1,0 +1,20 @@
+! ~/.config/rofi/config
+! ------------------------------------------------------------------------------
+! ROFI Configuration Options
+! ------------------------------------------------------------------------------
+rofi.modi:             combi,top,ssh
+rofi.combi-modi:       window,run,drun
+rofi.show-icons:       true
+rofi.sidebar-mode:     true
+rofi.theme: ~/.config/rofi/themes/ozzy.rasi
+
+rofi.lines: 10
+rofi.click-to-exit: true
+rofi.hide-scrollbar: false
+rofi.padding: 3
+rofi.sidebar-mode: true
+rofi.columns: 1
+rofi.separator-style: dash
+rofi.line-margin: 2,2,50
+rofi.levenshtein-sort: true
+rofi.scroll-method: 1%

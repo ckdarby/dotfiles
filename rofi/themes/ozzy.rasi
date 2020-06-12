@@ -1,0 +1,37 @@
+// ~/.config/rofi/themes/ozzy.rasi
+
+/**
+ * ROFI Color theme
+ * User: Ozzy
+ * Copyright: Dave Davenport
+ */
+
+// Import base theme
+@theme "Paper"
+
+
+* {
+    font: "Fira Mono for Powerline Medium 11";
+}
+
+#configuration {
+
+    // The display name of this browser
+    display-ssh:                   "  ";
+    // The display name of this browser
+    display-run:                    " ";
+    // The display name of this browser
+    display-drun:                   " ";
+    // The display name of this browser
+    display-window:                 " ";
+    display-combi:                  " ";
+    show-icons: true;
+}
+
+
+
+#window {
+    location: south;
+    anchor:   south;
+    width:    100%;
+}
