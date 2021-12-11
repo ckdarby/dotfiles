@@ -59,7 +59,7 @@ sudo apt-get install i3lock i3blocks
 
 **Required packages**
 ```shell
-sudo apt-get install debhelper dh-autoreconf bison flex libpango1.0-dev libstartup-notification0-dev libxkbcommon-dev libxkbcommon-x11-dev libxcb1-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev librsvg2-dev libxcb-xrm-dev
+sudo apt-get install debhelper dh-autoreconf bison flex libpango1.0-dev libstartup-notification0-dev libxkbcommon-dev libxkbcommon-x11-dev libxcb1-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev librsvg2-dev libxcb-xrm-dev feh
 ```
 
 **Installation**
