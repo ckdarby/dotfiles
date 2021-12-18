@@ -233,3 +233,6 @@ exec --no-startup-id syndaemon -i 2.0 -k -R -t
 
 # FEH for background image
 exec --no-startup-id feh --bg-scale --zoom fill ~/Pictures/enterprises_background.jpg
+
+# Disable Touchpad
+exec --no-startup-id xinput --disable 16
