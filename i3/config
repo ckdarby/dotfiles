@@ -229,10 +229,8 @@ exec --no-startup-id blueman-manager
 exec --no-startup-id redshift-gtk -l 43.6532:79.3832
 
 # Fix for keypard https://www.reddit.com/r/i3wm/comments/6ol2q5/cursor_jumps_to_back_and_forth_while_typing/
-exec --no-startup-id syndaemon -i 2.0 -k -R -t
+exec --no-startup-id syndaemon -i 3.0 -k -R -t
 
 # FEH for background image
 exec --no-startup-id feh --bg-scale --zoom fill ~/Pictures/enterprises_background.jpg
 
-# Disable Touchpad
-exec --no-startup-id xinput --disable 16
