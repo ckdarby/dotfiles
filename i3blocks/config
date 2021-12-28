@@ -146,7 +146,7 @@ interval=5
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [temperature]
-label=TEMP
+label=
 interval=10
 
 # Key indicators
