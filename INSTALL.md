@@ -83,9 +83,17 @@ sudo apt-get install blueman
 ## Linking dotfiles to config
 
 ```shell
-ln -s ~/dotfiles/i3 ~/.config/
-ln -s ~/dotfiles/i3blocks ~/.config/
-ln -s ~/dotfiles/i3lock ~/.config/
-ln -s ~/dotfiles/p10k ~/.config/
-ln -s ~/dotfiles/rofi ~/.config/
+ln -s ~/.dotfiles/i3 ~/.config/
+ln -s ~/.dotfiles/i3blocks ~/.config/
+ln -s ~/.dotfiles/i3lock ~/.config/
+ln -s ~/.dotfiles/p10k ~/.config/
+ln -s ~/.dotfiles/rofi ~/.config/
+```
+
+## Temperature
+
+Make sure to install `lm-sensors`:
+
+```shell
+sudo apt install lm-sensors
 ```
