@@ -205,6 +205,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         position top
+	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+	font pango:DejaVu Sans Mono 14
         status_command i3blocks
         tray_output primary
         wheel_up_cmd nop
