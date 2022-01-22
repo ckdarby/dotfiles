@@ -234,5 +234,7 @@ exec --no-startup-id redshift-gtk -l 43.6532:79.3832
 exec --no-startup-id syndaemon -i 3.0 -k -R -t
 
 # FEH for background image
-exec --no-startup-id scripts/background-image.sh
+exec --no-startup-id ~/.config/scripts/background-image.sh
 
+# Enable Polybar
+# exec_always --no-startup-id ~/.config/scripts/polybar.sh &

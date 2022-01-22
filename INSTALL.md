@@ -88,6 +88,8 @@ ln -s ~/.dotfiles/i3blocks ~/.config/
 ln -s ~/.dotfiles/i3lock ~/.config/
 ln -s ~/.dotfiles/p10k ~/.config/
 ln -s ~/.dotfiles/rofi ~/.config/
+ln -s ~/.dotfiles/scripts ~/.config/
+ln -s ~/.dotfiles/polybar ~/.config/
 ```
 
 ## Temperature
