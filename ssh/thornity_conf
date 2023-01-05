@@ -1,0 +1,4 @@
+Host thornity-dev
+  User ckdarby
+  ForwardAgent yes
+  HostName 192.168.88.115
