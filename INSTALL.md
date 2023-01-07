@@ -2,16 +2,10 @@
 
 ## Packages
 
-### Common packages
+### Default packages
 
 ```shell
-sudo apt-get install git curl automake make apt-transport-https wget texinfo linux-headers-$(uname -r)
-```
-
-### Terminal
-
-```shell
-sudo apt-get install zsh fonts-font-awesome fonts-powerline
+sudo apt-get install blueman zsh fonts-font-awesome fonts-powerline git curl automake make apt-transport-https wget texinfo linux-headers-$(uname -r)
 ```
 
 ### Oh my zsh
@@ -75,11 +69,6 @@ Installing from source can be found, [here](https://github.com/davatorium/rofi/b
 gsettings set org.gnome.desktop.background show-desktop-icons false
 ```
 
-### Bluetooth
-```shell
-sudo apt-get install blueman
-```
-
 ## Linking dotfiles to config
 
 ```shell
@@ -89,4 +78,6 @@ ln -s ~/dotfiles/i3lock ~/.config/
 ln -s ~/dotfiles/p10k ~/.config/
 ln -s ~/dotfiles/rofi ~/.config/
 ln -s ~/dotfiles/dunst ~/.config/
+ln -s ~/dotfiles/ssh ~/.config/
+echo "Include ~/dotfiles/ssh/*_conf" >> ~/.ssh/config
 ```
