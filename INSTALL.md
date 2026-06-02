@@ -2,82 +2,46 @@
 
 ## Packages
 
-### Default packages
-
 ```shell
-sudo apt-get install blueman zsh fonts-font-awesome fonts-powerline git curl automake make apt-transport-https wget texinfo linux-headers-$(uname -r)
+sudo apt-get install \
+  acpi alsa-utils blueman curl dunst fonts-font-awesome fonts-powerline git \
+  imagemagick i3 i3blocks i3lock jq libnotify-bin network-manager-gnome \
+  pulseaudio-utils sysstat terminator texinfo wget wireplumber xsettingsd zsh
 ```
 
-### Oh my zsh
+## Shell extras
 
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-#### p10k
-
-```shell
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
-```
-
-#### Fuzzy finder
-
-```shell
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
-
-### i3wm
-
-#### Installation
-
-**Older version**
+## Link configs
 
 ```shell
-sudo apt-get install i3
+mkdir -p ~/.config ~/.ssh ~/.config/systemd/user
+
+for name in i3 i3blocks i3lock p10k rofi dunst ssh; do
+  ln -sfn "$HOME/dotfiles/$name" "$HOME/.config/$name"
+done
+
+grep -qxF "Include ~/dotfiles/ssh/*_conf" ~/.ssh/config 2>/dev/null \
+  || echo "Include ~/dotfiles/ssh/*_conf" >> ~/.ssh/config
 ```
 
-**Latest stable**
-
-[Instructions here](https://i3wm.org/docs/repositories.html)
-
-#### i3 "addons"
+## Enable user services
 
 ```shell
-sudo apt-get install i3lock i3blocks
-```
+for service in obs-audio-router streamcontroller xsettingsd huiontablet; do
+  ln -sf "$HOME/dotfiles/systemd/user/$service.service" "$HOME/.config/systemd/user/$service.service"
+done
 
-
-#### Rofi Dmenu Replacement
-
-**Required packages**
-```shell
-sudo apt-get install debhelper dh-autoreconf bison flex libpango1.0-dev libstartup-notification0-dev libxkbcommon-dev libxkbcommon-x11-dev libxcb1-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev librsvg2-dev libxcb-xrm-dev
-```
-
-**Installation**
-
-Installing from source can be found, [here](https://github.com/davatorium/rofi/blob/next/INSTALL.md)
-
-*If newer version of libcheck required installing from source can be found, [here](https://github.com/libcheck/check).*
-
-
-####  Fix Nautilus
-
-```shell
-gsettings set org.gnome.desktop.background show-desktop-icons false
-```
-
-## Linking dotfiles to config
-
-```shell
-ln -s ~/dotfiles/i3 ~/.config/
-ln -s ~/dotfiles/i3blocks ~/.config/
-ln -s ~/dotfiles/i3lock ~/.config/
-ln -s ~/dotfiles/p10k ~/.config/
-ln -s ~/dotfiles/rofi ~/.config/
-ln -s ~/dotfiles/dunst ~/.config/
-ln -s ~/dotfiles/ssh ~/.config/
-echo "Include ~/dotfiles/ssh/*_conf" >> ~/.ssh/config
+systemctl --user daemon-reload
+systemctl --user enable --now \
+  obs-audio-router.service \
+  streamcontroller.service \
+  xsettingsd.service \
+  huiontablet.service
 ```

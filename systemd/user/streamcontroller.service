@@ -1,0 +1,14 @@
+[Unit]
+Description=StreamController
+ConditionPathExists=/usr/bin/flatpak
+
+[Service]
+Type=simple
+ExecStartPre=-/usr/bin/flatpak kill com.core447.StreamController
+ExecStart=/usr/bin/flatpak run com.core447.StreamController
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target

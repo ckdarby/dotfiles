@@ -1,0 +1,13 @@
+[Unit]
+Description=Huion tablet daemon
+ConditionPathExists=/usr/lib/huiontablet/huiontablet.sh
+
+[Service]
+Type=simple
+ExecStart=/usr/lib/huiontablet/huiontablet.sh
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target

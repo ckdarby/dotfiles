@@ -1,0 +1,16 @@
+[Unit]
+Description=Route desktop audio to OBS virtual sink and loop to headset
+Wants=pipewire-pulse.service wireplumber.service
+After=pipewire-pulse.service wireplumber.service
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+ExecStart=%h/.config/i3/obs-audio-router.sh
+Restart=always
+RestartSec=5
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target

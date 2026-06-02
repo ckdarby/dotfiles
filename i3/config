@@ -59,15 +59,18 @@ set $ws_discord "discord"
 set $ws_tts "tts"
 set $ws_tablet "tablet"
 
-# Primary
-workspace $ws_excalidraw output DP-4
+set $output_left DP-4
+set $output_right DP-0
 
-# Off Stream
-workspace $ws_streamdeck output DP-0
-workspace $ws_spotify output DP-0
-workspace $ws_discord output DP-0
-workspace $ws_tts output DP-0
-workspace $ws_tablet output DP-0
+# Left monitor
+workspace $ws_excalidraw output $output_left
+
+# Right monitor
+workspace $ws_streamdeck output $output_right
+workspace $ws_spotify output $output_right
+workspace $ws_discord output $output_right
+workspace $ws_tts output $output_right
+workspace $ws_tablet output $output_right
 
 # Settings
 font pango:System San Francisco Display 9
@@ -242,19 +245,11 @@ exec --no-startup-id nm-applet
 #Bluetooth manager
 exec --no-startup-id blueman-applet
 
-#Zoom old fix
-exec --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
-
-exec --no-startup-id flatpak run com.core447.StreamController
 exec --no-startup-id spotify
 exec --no-startup-id discord
 exec --no-startup-id code ~/excalidraw
 exec --no-startup-id code ~/scratchpad
 exec --no-startup-id terminator --title="stream-terminal"
-exec --no-startup-id /usr/lib/huiontablet/huiontablet.sh
-
-# Dark theme nautilus
-exec --no-startup-id xsettingsd
 
 for_window [class="(?i)^discord$"] mark --add discord, move container to workspace $ws_discord
 

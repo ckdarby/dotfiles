@@ -1,0 +1,13 @@
+[Unit]
+Description=X settings daemon
+ConditionPathExists=/usr/bin/xsettingsd
+
+[Service]
+Type=simple
+ExecStartPre=-/usr/bin/pkill -x xsettingsd
+ExecStart=/usr/bin/xsettingsd
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
