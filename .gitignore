@@ -1,0 +1,67 @@
+# Local editor and OS noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.log
+*.bak
+*.orig
+
+# Local Codex marker files
+**/.codex
+
+# Generated package/archive artifacts
+*.deb
+*.rpm
+*.pkg
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+
+# Environment files and local overrides
+.env
+.env.*
+!.env.example
+!.env.sample
+*.local
+*.local.*
+
+# Private keys, certificates, and encrypted key stores
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.jks
+*.kdbx
+*.age
+*.asc
+*.gpg
+*.pgp
+**/id_rsa
+**/id_rsa.pub
+**/id_dsa
+**/id_dsa.pub
+**/id_ecdsa
+**/id_ecdsa.pub
+**/id_ed25519
+**/id_ed25519.pub
+**/ssh_host_*_key
+**/ssh_host_*_key.pub
+
+# SSH and auth state that should not live in dotfiles
+**/known_hosts
+**/known_hosts.old
+**/authorized_keys
+**/.netrc
+**/.npmrc
+**/.pypirc
+**/.docker/config.json
+
+# Cloud provider credentials copied from a home directory
+**/.aws/
+**/.azure/
+**/.config/gcloud/
+**/.kube/config
