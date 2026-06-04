@@ -5,8 +5,16 @@
 ```shell
 sudo apt-get install \
   acpi alsa-utils blueman curl dunst fonts-font-awesome fonts-powerline git \
-  imagemagick i3 i3blocks i3lock jq libnotify-bin network-manager-gnome \
-  pulseaudio-utils sysstat terminator texinfo wget wireplumber xsettingsd zsh
+  flatpak imagemagick i3 i3blocks i3lock jq libnotify-bin network-manager-gnome \
+  pulseaudio-utils sysstat terminator texinfo wget wireplumber \
+  x11-xserver-utils xsettingsd zsh
+```
+
+## Flatpak apps
+
+```shell
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.flameshot.Flameshot com.core447.StreamController
 ```
 
 ## Shell extras
@@ -26,6 +34,8 @@ mkdir -p ~/.config ~/.ssh ~/.config/systemd/user
 for name in i3 i3blocks i3lock p10k rofi dunst ssh; do
   ln -sfn "$HOME/dotfiles/$name" "$HOME/.config/$name"
 done
+
+ln -sfn "$HOME/dotfiles/p10k/.p10k.zsh" "$HOME/.p10k.zsh"
 
 grep -qxF "Include ~/dotfiles/ssh/*_conf" ~/.ssh/config 2>/dev/null \
   || echo "Include ~/dotfiles/ssh/*_conf" >> ~/.ssh/config
